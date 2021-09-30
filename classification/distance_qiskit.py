@@ -2,6 +2,7 @@ from qiskit import QuantumRegister, ClassicalRegister
 from qiskit import QuantumCircuit
 from qiskit import Aer, execute
 from numpy import pi
+import json
 
 def main(dict):
     x_p = dict['point']['x']
@@ -40,15 +41,6 @@ def main(dict):
         centroid_distances.append(result['1'])
 
     print("(Quantum) Distances:", centroid_distances)
-    closest = centroid_distances.index(min(centroid_distances))
-    return {'Message': "The new point is closest to centroid" + str(closest)}
-
-dict = {
-    'point': {'x': 0.5, 'y': 0.5},
-    'centroids': [
-        {'x': -0.265, 'y': -0.265},
-        {'x': 0.3733125, 'y': 0.3733125},
-        {'x': 0.03875, 'y': 0.03875}
-    ]
-}
-print(main(dict))
+    dict['distances'] = centroid_distances
+    #closest = centroid_distances.index(min(centroid_distances))
+    return json.dumps(dict)
