@@ -43,4 +43,4 @@ To execute the workflow, open ``$PUBLIC_HOSTNAME:8080`` after all Docker contain
 
 10. To shut down the setup, run ``docker-compose down -v`` in the folder containing the Docker-Compose file.
 
-**Note: This use case is adapted from the [this implementation](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2021-icws).
+**Note**: This use case is adapted from [this implementation](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2021-icws).
