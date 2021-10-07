@@ -68,6 +68,10 @@ public class CheckClusteringConvergenceTask implements JavaDelegate {
 
             LOGGER.info("Result of convergence check: {}", converged);
             execution.setVariable(Constants.VARIABLE_NAME_CLUSTERING_CONVERGED, converged);
+
+            if (converged) {
+                // TODO: retrieve data to publish in user form
+            }
         } catch (final Exception e) {
             LOGGER.error("Exception while sending post request to URL: {}", requestUrl);
             throw new BpmnError("Exception while sending post request to URL: " + requestUrl);

@@ -35,7 +35,14 @@ class QuantumBackendFactory:
             if token == '':
                 raise Exception('A token is needed when using ibm backends.')
             else:
-                return IBMQ.enable_account(token).get_backend(instance)
+                try:
+                    provider = IBMQ.enable_account(token)
+                    print('IBMQ_TOKEN activated')
+                except:
+                    IBMQ.disable_account()
+                    provider = IBMQ.enable_account(token)
+                    print('Disabled old and activated new IBMQ_TOKEN')
+                return provider.get_backend(instance)
 
         elif 'aer' in provider:
             if 'qasm' in instance:
