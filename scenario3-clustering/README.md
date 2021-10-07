@@ -29,7 +29,7 @@ To execute the workflow, open ``$PUBLIC_HOSTNAME:8080`` after all Docker contain
 
 3. Click on ``Start process`` and select the ``quantum-workflow-demonstrator``.
 
-4. Provide the required input data, i.e., (i) your IBMQ access token, (ii) the QPU to use (e.g., ``ibmq_qasm_simulator``), and (iii) the URL to load the input data from, which can be found in [this folder](./data) (e.g., ``https://raw.githubusercontent.com/vietzd/qc-cloud-challenges/main/scenario3/data/Subset25.csv)
+4. Provide the required input data, i.e., (i) your IBMQ access token, (ii) the QPU to use (e.g., ``ibmq_qasm_simulator``), and (iii) the URL to load the input data from, which can be found in [this folder](./data) (e.g., ``https://raw.githubusercontent.com/vietzd/qc-cloud-challenges/main/scenario3-clustering/data/Subset10.csv``)
 
 5. Start the workflow.
 
