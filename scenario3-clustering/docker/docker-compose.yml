@@ -1,0 +1,27 @@
+version: '3'
+services:
+  ### Camunda Engine ###
+  camunda-engine:
+    build: camunda
+    environment:
+      PUBLIC_HOSTNAME: ${PUBLIC_HOSTNAME}
+    ports:
+      - 8080:8080
+    networks:
+      - clustering
+  ### Services ###
+  clustering-service:
+    build: clustering
+    ports:
+      - 5000:5000
+    networks:
+      - clustering
+  data-preparation-service:
+    build: data-preparation
+    ports:
+      - 5001:5000
+    networks:
+      - clustering
+networks:
+  clustering:
+    driver: bridge
