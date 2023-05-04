@@ -24,8 +24,8 @@ def get_Distance(x,y):
     qc = QuantumCircuit(qr, cr, name="k_means")
 
     qc.h(qr[0])
-    qc.h(qr[1]) # vermutlich falsch
-    qc.h(qr[2]) # vermutlich falsch
+    qc.h(qr[1])
+    qc.h(qr[2])
     qc.u(theta_1, pi, pi, qr[1])
     qc.u(theta_2, pi, pi, qr[2])
     qc.cswap(qr[0], qr[1], qr[2])
